@@ -819,7 +819,7 @@ class BaseGrouper:
 
     @cache_readonly
     def indices(self):
-        """ dict {group name -> group indices} """
+        """dict {group name -> group indices}"""
         if len(self.groupings) == 1 and isinstance(
             self.result_index, ABCCategoricalIndex
         ):
@@ -855,7 +855,7 @@ class BaseGrouper:
 
     @cache_readonly
     def groups(self) -> dict[Hashable, np.ndarray]:
-        """ dict {group name -> group labels} """
+        """dict {group name -> group labels}"""
         if len(self.groupings) == 1:
             return self.groupings[0].groups
         else:
@@ -1089,7 +1089,7 @@ class BinGrouper(BaseGrouper):
 
     @cache_readonly
     def groups(self):
-        """ dict {group name -> group labels} """
+        """dict {group name -> group labels}"""
         # this is mainly for compat
         # GH 3881
         result = {
